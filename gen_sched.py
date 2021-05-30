@@ -157,7 +157,7 @@ def convert_min_to_time(weeknum,weekday,min):
   d = f"{datetime.utcnow().year}-W{weeknum}"
   target_date = datetime.strptime(d + '-1', "%Y-W%W-%w") # get monday by weeknum for curr year
   target_date = target_date + timedelta(minutes=min) + timedelta(days=weekday)  # add delta minutes
-  target_date = target_date + timedelta(hours=-2)                               # -2 hours
+  target_date = target_date + timedelta(hours=-3)                               # -3 hours from utc
   formated_time  = target_date.strftime('%Y-%m-%dT%H:%M:00.000Z')
   return formated_time
 
